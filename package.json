@@ -1,0 +1,34 @@
+{
+  "name": "proyectopersonal",
+  "version": "0.0.0",
+  "description": "Proyecto Personal de clase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-vasquez/proyectoPersonal.git"
+  },
+  "keywords": [
+    "nodeJS",
+    "JS",
+    "MIR",
+    "mongoDB",
+    "r-vasquez"
+  ],
+  "author": "r-vasquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r-vasquez/proyectoPersonal/issues"
+  },
+  "homepage": "https://github.com/r-vasquez/proyectoPersonal#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
