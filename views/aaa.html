@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top100 Movies</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <nav class="#D21E57 lighten-1 sidenav-trigger z-depth-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="brand-logo" href="#!" class="brand-logo">R-Vasquez</a>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a href="https://github.com/r-vasquez/proyectoPersonal">Ir a GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="nav-mobile">
+      <li><a href="https://github.com/r-vasquez/proyectoPersonal">Ir a GitHub</a></li>
+    </ul>
+   
+    <div class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h1 class="header center #3F2237-text">Top 100 Movies</h1>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="../images/cinema.jpeg">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let elems = document.querySelectorAll('.sidenav')
+        let instances = M.Sidenav.init(elems)
+      })
+      document.addEventListener('DOMContentLoaded', function() {
+        let elems2 = document.querySelectorAll('.parallax');
+        let instances2 = M.Parallax.init(elems2);
+      });
+    </script>
+  </body>
+</html>
