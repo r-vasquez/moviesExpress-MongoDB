@@ -17,3 +17,5 @@ connection.on('open', () => {
 })
 
 const Movies = model('MoviesCollection', MoviesSchema)
+
+module.exports = { Movies }
