@@ -10,13 +10,27 @@ const app = express()
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   try {
-    res.render('index')
+    const queryResult = await Movies.find({})
+    res.render('index', { queryResult })
   } catch (error) {
     res.status(500)
     console.error(error)
   }
+})
+
+app.post('/', async (req, res) => {
+  try {
+    const { data: moviesList } = await axios.get(
+      //the list is in data (Axios documentation)
+      'https://raw.githubusercontent.com/hjorturlarsen/IMDB-top-100/master/data/movies.json'
+    )
+    const result = await Movies.findAndInsertMany(moviesList)
+  } catch (error) {
+    console.error(error)
+  }
+  res.redirect('/') //Default status: 302
 })
 
 app.listen(portNumber, () => {
