@@ -22,16 +22,16 @@
 
     <!--   Title Section with Parallax -->
     <div class="parallax-container">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h2 class="header center white-text">Top Rated 100 Movies</h2>
-          </div>
-          <div class="row center">
-            <h5 class="header col s12 light">a personal project of R.Vasquez</h5>
-          </div>
+      <!-- <div class="section no-pad-bot"> -->
+      <div class="container">
+        <div class="row center">
+          <h2 class="header center white-text">Top Rated 100 Movies</h2>
+        </div>
+        <div class="row center">
+          <h5 class="header col s12 light">a personal project of R.Vasquez</h5>
         </div>
       </div>
+      <!-- </div> -->
       <div class="parallax"><img class="responsive-img" src="../images/cinema2.jpeg" /></div>
     </div>
 
@@ -39,7 +39,11 @@
     <div class="container">
       <div class="section">
         <div class="row center">
+          <% if(queryResult.length !== 0){ %>
+          <div class="col s6">
+          <% } else { %>
           <div class="col s12">
+          <% } %>
             <form action="/" method="POST">
               <div class="input-field">
                 <button class="red darken-4 waves-effect waves-light btn-large" type="submit">
@@ -48,6 +52,17 @@
               </div>
             </form>
           </div>
+          <% if(queryResult.length !== 0){ %>
+          <div class="col s6">
+            <form action="/dform?_method=DELETE" method="POST">
+              <div class="input-field">
+                <button class="red darken-4 waves-effect waves-light btn-large" type="submit">
+                  <i class="material-icons left">delete_forever</i>Delete List
+                </button>
+              </div>
+            </form>
+          </div>
+          <% } %>
         </div>
 
         <div class="row center">

@@ -1,6 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 require('dotenv').config()
+const methodOverride = require('method-override')
 
 const { Movies } = require('./db-connection')
 const portNumber = process.env.PORT || 3000
@@ -9,6 +10,7 @@ const app = express()
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+app.use(methodOverride('_method')) //Using methodOverride with query Params
 
 app.get('/', async (req, res) => {
   try {
@@ -30,6 +32,11 @@ app.post('/', async (req, res) => {
   } catch (error) {
     console.error(error)
   }
+  res.redirect('/') //Default status: 302
+})
+
+app.delete('/dform', async (req, res) => {
+  const result = await Movies.deleteMany({})
   res.redirect('/') //Default status: 302
 })
 
